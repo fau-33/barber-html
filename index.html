@@ -59,6 +59,33 @@
       </div>
     </nav>
 
+    <div class="hero">
+      <h3>Olá, Silva</h3>
+      <h5>Quinta. 08 Maio</h5>
+    </div>
+
+    <form>
+      <input type="text" />
+      <button>
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+
+    <div class="categoria">
+      <button>
+        <img src="./assets/icons/cut.png" alt="" />
+        <h4>Corte</h4>
+      </button>
+      <button>
+        <img src="./assets/icons/mustache.png" alt="" />
+        <h4>Barba</h4>
+      </button>
+      <button>
+        <img src="./assets/icons/razor.png" alt="" />
+        <h4>Acabamento</h4>
+      </button>
+    </div>
+
     <h1>Barber</h1>
     <style>
       * {
@@ -82,6 +109,8 @@
         background-color: #000;
         overflow: hidden;
         width: 100vw;
+        margin: 0 auto;
+        max-width: 450px;
       }
       header {
         height: 60px;
@@ -111,6 +140,7 @@
         right: 0;
         position: absolute;
         display: none;
+
         background-color: var(--color-secondary);
       }
       .active-header {
@@ -150,7 +180,7 @@
         font-size: 10px;
       }
       .active {
-        display: block;
+        display: hidden;
       }
       nav header button {
         background-color: transparent;
@@ -161,6 +191,9 @@
         font-size: 22px;
         color: var(--color-white);
       }
+      nav {
+        display: none !important;
+      }
       .menu-container {
         gap: 20px;
         display: flex;
@@ -170,6 +203,48 @@
       }
       .item-sair {
         margin: 0px 20px;
+      }
+
+      .hero {
+        color: #ccc;
+        padding: 16px;
+      }
+      .hero h3 {
+        font-size: 44px;
+      }
+      form {
+        gap: 10px;
+        padding: 20px;
+        display: flex;
+      }
+      form input {
+        flex: 1;
+        padding: 7px;
+        border: 2px solid var(--color-purple);
+        background-color: transparent;
+        outline: none;
+      }
+
+      form button {
+        border-radius: 5px;
+        padding: 7px;
+        color: var(--color-white);
+        background-color: var(--color-purple);
+      }
+
+      .categoria {
+        margin: 0 20px;
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .categoria button {
+        gap: 10px;
+        padding: 10px;
+        color: var(--color-white);
+        border-radius: 10px;
+        background-color: var(--color-secondary);
+        display: flex;
       }
     </style>
 
