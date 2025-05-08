@@ -178,39 +178,31 @@
       }
 
       .categoria {
-        gap: 10px;
         display: flex;
         padding: 16px;
         justify-content: space-around;
+        background-color: var(--color-secondary);
       }
 
       .categoria button {
         display: flex;
-        padding: 7px 20px;
-        border-radius: 10px;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         background-color: transparent;
         border: none;
         cursor: pointer;
-        background-color: var(--color-secondary);
         gap: 8px;
       }
 
       .categoria button img {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
       }
 
       .categoria button h4 {
         font-size: 14px;
         color: var(--color-white);
-      }
-
-      .banner {
-        margin-top: 10px;
-        padding: 0 16px;
-        width: 100%;
       }
 
       .barber-shops {
@@ -334,8 +326,6 @@
       </button>
     </div>
 
-    <img class="banner" src="./assets/banner.png" alt="" />
-
     <section class="barber-shops">
       <div class="shop-card">
         <img src="./assets/card/01.png " alt="Barbearia Vintage" />
@@ -364,16 +354,12 @@
     </section>
 
     <script>
-      let btnClose = document.querySelector("#btn-close");
-      let btnShow = document.querySelector("#btn-close");
-      addEventListener.btnClose("#btn-menu").onclick = (event) => {
+      document.querySelector("#btn-menu").onclick = (event) => {
         event.preventDefault();
         document.querySelector("nav").classList.add("active");
       };
 
-      addEventListener.document.querySelector("#btn-close").onclick = (
-        event
-      ) => {
+      document.querySelector("#btn-close").onclick = (event) => {
         event.preventDefault();
         document.querySelector("nav").classList.remove("active");
       };
