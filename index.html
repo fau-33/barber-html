@@ -3,9 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
+    />
     <title>Barber</title>
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <div class="logo-purple">
+          <i class="bi bi-scissors"></i>
+          <h3>FSW</h3>
+        </div>
+        <h3>BARBER</h3>
+      </div>
+      <i id="btn-menu" class="bi bi-list"></i>
+    </header>
+
+    <nav>
+      <header>
+        <h3>Perfil</h3>
+        <button id="btn-close"><i class="bi bi-x"></i></button>
+      </header>
+    </nav>
+
     <h1>Barber</h1>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+
+        border: none;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      :root {
+        --color-white: #fff;
+        --color-primary: #000;
+        --color-purple: #671be0;
+        --color-secondary: #1d1d1d;
+      }
+      body {
+        color: var(--color-white);
+        background-color: #000;
+        overflow: hidden;
+        width: 100vw;
+      }
+      header {
+        height: 60px;
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--color-secondary);
+      }
+      .logo {
+        display: flex;
+      }
+      .logo-purple {
+        display: flex;
+        margin-right: 2px;
+        color: var(--color-purple);
+      }
+      .logo-purple .bi {
+        transform: rotate(90deg);
+      }
+
+      nav {
+        height: 100vh;
+        width: 50%;
+        top: 0;
+        right: 0;
+        position: absolute;
+        display: none;
+        background-color: var(--color-secondary);
+      }
+      .active {
+        display: block;
+      }
+      nav header button {
+        background-color: transparent;
+        border-radius: 25px;
+        padding: 7px;
+      }
+      nav header button i {
+        font-size: 22px;
+        color: var(--color-white);
+      }
+    </style>
+
+    <script>
+      document.querySelector("#btn-menu").onclick = (event) => {
+        event.preventDefault();
+
+        document.querySelector("nav").classList.add("active");
+      };
+
+      document.querySelector("#btn-close").onclick = (event) => {
+        event.preventDefault();
+
+        document.querySelector("nav").classList.remove("active");
+      };
+    </script>
   </body>
 </html>
