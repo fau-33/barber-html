@@ -8,254 +8,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
     <title>Barber</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        border: none;
-        list-style: none;
-        text-decoration: none;
-      }
-
-      :root {
-        --color-white: #fff;
-        --color-primary: #000;
-        --color-purple: #671be0;
-        --color-secondary: #1d1d1d;
-      }
-
-      body {
-        color: var(--color-white);
-        background-color: var(--color-primary);
-        overflow: auto;
-        width: 100vw;
-        margin: 0 auto;
-        max-width: 450px;
-      }
-
-      header {
-        height: 60px;
-        display: flex;
-        padding: 16px;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--color-secondary);
-      }
-
-      .logo {
-        display: flex;
-      }
-
-      .logo-purple {
-        display: flex;
-        margin-right: 2px;
-        color: var(--color-purple);
-      }
-
-      .logo-purple .bi {
-        transform: rotate(90deg);
-      }
-
-      nav {
-        display: none;
-        height: 100vh;
-        width: 70%;
-        max-width: 400px;
-        top: 0;
-        right: 0;
-        position: absolute;
-        background-color: var(--color-secondary);
-        z-index: 999;
-      }
-
-      nav.active {
-        display: flex;
-        flex-direction: column;
-      }
-
-      nav header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-      }
-
-      nav header h3 {
-        font-size: 18px;
-      }
-
-      nav header button {
-        background-color: transparent;
-        border-radius: 25px;
-        padding: 7px;
-      }
-
-      nav header button i {
-        font-size: 22px;
-        color: var(--color-white);
-      }
-
-      .active-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 16px;
-      }
-
-      .active-header img {
-        border-radius: 50%;
-        width: 90px;
-      }
-
-      .active-header h3 {
-        font-size: 16px;
-      }
-
-      .menu-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 16px;
-      }
-
-      .item-menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        border-radius: 20px;
-        background-color: var(--color-secondary);
-        border: 2px solid var(--color-purple);
-      }
-
-      .item-menu h3 {
-        font-size: 14px;
-      }
-
-      .item-sair {
-        margin: 16px;
-      }
-
-      .hero {
-        text-align: center;
-        padding: 16px;
-      }
-
-      .hero h3 {
-        font-size: 24px;
-        margin-bottom: 8px;
-      }
-
-      .hero h5 {
-        font-size: 16px;
-        color: #ccc;
-      }
-
-      form {
-        display: flex;
-        gap: 10px;
-        padding: 16px;
-      }
-
-      form input {
-        flex: 1;
-        padding: 10px;
-        border: 2px solid var(--color-purple);
-        background-color: transparent;
-        outline: none;
-        border-radius: 20px;
-      }
-
-      form button {
-        padding: 10px 16px;
-        border-radius: 20px;
-        background-color: var(--color-purple);
-        color: var(--color-white);
-        cursor: pointer;
-      }
-
-      .categoria {
-        display: flex;
-        padding: 16px;
-        justify-content: space-around;
-        background-color: var(--color-secondary);
-      }
-
-      .categoria button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        gap: 8px;
-      }
-
-      .categoria button img {
-        width: 30px;
-        height: 30px;
-      }
-
-      .categoria button h4 {
-        font-size: 14px;
-        color: var(--color-white);
-      }
-
-      .barber-shops {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 16px;
-      }
-
-      .shop-card {
-        background-color: var(--color-secondary);
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        transition: transform 0.3s ease;
-      }
-
-      .shop-card:hover {
-        transform: scale(1.05);
-      }
-
-      .shop-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-
-      .shop-card h3 {
-        font-size: 18px;
-        margin: 10px 16px 5px;
-      }
-
-      .shop-card p {
-        font-size: 14px;
-        color: #ccc;
-        margin: 0 16px 10px;
-      }
-
-      .shop-card button {
-        background-color: var(--color-purple);
-        color: var(--color-white);
-        border: none;
-        padding: 10px;
-        width: 100%;
-        cursor: pointer;
-        font-size: 14px;
-        transition: background-color 0.3s ease;
-      }
-
-      .shop-card button:hover {
-        background-color: #4e139f;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -276,8 +31,8 @@
       </header>
 
       <section class="active-header">
-        <img src="https://github.com/fsantosdev.png " alt="Foto de perfil" />
-        <h3>Fernando Santos</h3>
+        <img src="https://github.com/fau-33.png " alt="Foto de perfil" />
+        <h3>Flávio Félix</h3>
       </section>
 
       <div class="menu-container">
@@ -295,7 +50,7 @@
         </div>
       </div>
 
-      <div class="item-menu item-sair">
+      <div class="item-sair">
         <h3>Logout</h3>
         <i class="bi bi-box-arrow-right"></i>
       </div>
@@ -313,56 +68,56 @@
 
     <div class="categoria">
       <button>
-        <img src="./assets/icons/cut.png " alt="Corte" />
+        <img src="./assets/icons/cut.png" alt="Corte" />
         <h4>Corte</h4>
       </button>
       <button>
-        <img src="./assets/icons/mustache.png " alt="Barba" />
+        <img src="./assets/icons/mustache.png" alt="Barba" />
         <h4>Barba</h4>
       </button>
       <button>
-        <img src="./assets/icons/razor.png " alt="Acabamento" />
+        <img src="./assets/icons/razor.png" alt="Acabamento" />
         <h4>Acabamento</h4>
       </button>
     </div>
 
     <section class="barber-shops">
       <div class="shop-card">
-        <img src="./assets/card/01.png " alt="Barbearia Vintage" />
+        <img src="./assets/card/01.png" alt="Barbearia Vintage" />
         <h3>Barbearia Vintage</h3>
         <p>Rua das Palmeiras, 123</p>
         <button>Agendar</button>
       </div>
       <div class="shop-card">
-        <img src="./assets/card/02.png " alt="Barbearia Brooks" />
+        <img src="./assets/card/02.png" alt="Barbearia Brooks" />
         <h3>Barbearia Brooks</h3>
         <p>Rua das Palmeiras, 123</p>
         <button>Agendar</button>
       </div>
       <div class="shop-card">
-        <img src="./assets/card/19.png " alt="Barbearia Bros" />
+        <img src="./assets/card/19.png" alt="Barbearia Bros" />
         <h3>Barbearia Bros</h3>
         <p>Rua das Palmeiras, 123</p>
         <button>Agendar</button>
       </div>
       <div class="shop-card">
-        <img src="./assets/card/20.png " alt="Barbearia Classic" />
+        <img src="./assets/card/20.png" alt="Barbearia Classic" />
         <h3>Barbearia Classic</h3>
         <p>Rua das Palmeiras, 123</p>
         <button>Agendar</button>
       </div>
+
+      <!-- Botão WhatsApp Centralizado -->
+      <div class="whatsapp-button-container">
+        <a
+          href="https://wa.me/5551999999999"
+          target="_blank"
+          class="whatsapp-button"
+        >
+          <i class="bi bi-whatsapp"></i>
+          Entrar em Contato pelo WhatsApp
+        </a>
+      </div>
     </section>
-
-    <script>
-      document.querySelector("#btn-menu").onclick = (event) => {
-        event.preventDefault();
-        document.querySelector("nav").classList.add("active");
-      };
-
-      document.querySelector("#btn-close").onclick = (event) => {
-        event.preventDefault();
-        document.querySelector("nav").classList.remove("active");
-      };
-    </script>
   </body>
 </html>
