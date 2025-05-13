@@ -23,7 +23,9 @@ body {
   overflow: auto;
   width: 100vw;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 900px;
+  font-family: Arial, sans-serif;
+  position: relative; /* Para posicionar o botão flutuante */
 }
 
 /* HEADER PRINCIPAL */
@@ -50,19 +52,22 @@ header {
   transform: rotate(90deg);
 }
 
-/* MENU LATERAL */
+/* MENU LATERAL (MODAL COMPACTO) */
 nav {
   display: none;
-  height: 100vh;
-  width: 70%;
-  max-width: 400px;
-  top: 0;
-  right: 0;
   position: absolute;
+  top: 60px;
+  right: 0;
+  width: 80%;
+  max-width: 300px;
+  height: auto;
   background-color: var(--color-secondary);
   z-index: 999;
   flex-direction: column;
   justify-content: space-between;
+  padding: 16px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 nav.active {
@@ -73,7 +78,7 @@ nav header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  margin-bottom: 16px;
 }
 
 nav header h3 {
@@ -97,24 +102,23 @@ nav header button i {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 16px;
+  margin-bottom: 16px;
 }
 
 .active-header img {
   border-radius: 50%;
-  width: 90px;
+  width: 60px;
 }
 
 .active-header h3 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* ITENS DO MENU */
 .menu-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 16px;
+  gap: 10px;
   flex-grow: 1;
 }
 
@@ -123,7 +127,7 @@ nav header button i {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: var(--color-secondary);
   border: 2px solid var(--color-purple);
 }
@@ -134,12 +138,12 @@ nav header button i {
 
 /* BOTÃO DE LOGOUT */
 .item-sair {
-  margin: 16px;
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: var(--color-secondary);
   border: 2px solid var(--color-purple);
 }
@@ -220,7 +224,7 @@ form button {
 /* SEÇÃO DE BARBEARIA */
 .barber-shops {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
   padding: 16px;
 }
@@ -269,32 +273,44 @@ form button {
   background-color: #4e139f;
 }
 
-/* BOTÃO WHATSAPP FIXO ABAIXO DOS CARDS */
-.whatsapp-button-container {
-  display: flex;
-  justify-content: center; /* Centraliza o botão horizontalmente */
-  margin-top: 16px; /* Espaço acima do botão */
-}
-
-.whatsapp-button {
+/* BOTÃO WHATSAPP FIXO NO CANTO DIREITO */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   display: flex;
   align-items: center;
-  gap: 8px; /* Espaço entre o ícone e o texto */
-  padding: 10px 16px;
-  background-color: var(
-    --color-purple
-  ); /* Mesma cor roxa dos botões "Agendar" */
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366; /* Cor oficial do WhatsApp */
   color: var(--color-white);
-  border-radius: 20px;
-  text-decoration: none; /* Remove sublinhado do link */
-  font-size: 14px;
-  transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-.whatsapp-button:hover {
-  background-color: #4e139f; /* Altera cor ao passar o mouse */
+.whatsapp-float:hover {
+  background-color: #128c7e; /* Cor mais escura do WhatsApp */
 }
 
-.whatsapp-button .bi-whatsapp {
-  font-size: 20px; /* Tamanho do ícone do WhatsApp */
+.whatsapp-float i {
+  font-size: 24px;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 768px) {
+  body {
+    max-width: 1200px;
+  }
+
+  nav {
+    width: 300px;
+    max-height: 100vh;
+  }
+
+  .barber-shops {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
