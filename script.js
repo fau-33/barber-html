@@ -3,7 +3,12 @@ document.querySelector("#btn-menu").onclick = (event) => {
   document.querySelector("nav").classList.add("active");
 };
 
-document.querySelector("#btn-close").onclick = (event) => {
+document.querySelector(".btn-close").onclick = (event) => {
+  event.preventDefault();
+  document.querySelector("nav").classList.remove("active");
+};
+
+document.querySelector(".item-sair").onclick = (event) => {
   event.preventDefault();
   document.querySelector("nav").classList.remove("active");
 };
